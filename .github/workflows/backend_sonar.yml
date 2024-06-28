@@ -29,3 +29,5 @@ jobs:
         sonar-project-key: ${{ secrets.SONAR_PROJECT_NAME_API }}
         sonar-token: ${{ secrets.SONAR_TOKEN_API }}
         sonar-organization: ${{ secrets.SONAR_ORGANIZATION }}
+        dotnet-solution-path: 'api/ArtyApp/ArtyApp.sln'
+        dotnet-version: '6.0.x'
