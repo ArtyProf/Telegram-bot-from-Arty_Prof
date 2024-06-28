@@ -25,25 +25,9 @@ jobs:
     name: Build and analyze
     runs-on: ubuntu-latest
     steps:
-      - name: 'Setup .NET'
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: 6.0.x
-      - name: Set up JDK 11
-        uses: actions/setup-java@v3
-        with:
-          java-version: '11'
-          distribution: 'zulu'
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0 
-      - name: Build and analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_API }}
-        shell: bash
-        run: |
-          dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /k:"${{ secrets.SONAR_PROJECT_NAME_API }}" /o:"${{ secrets.SONAR_ORGANIZATION }}" /d:sonar.login="${{ secrets.SONAR_TOKEN_API }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build api/ArtyApp/ArtyApp.sln
-          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN_API }}"
+    - name: Use .NET Build, Test, SonarCloud check and Publish Action
+      uses: ArtyProf/dotnet-build-test-publish-action@v1
+      with:
+        sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
+        sonar-token: ${{ secrets.SONAR_TOKEN }}
+        sonar-organization: ${{ secrets.SONAR_ORGANIZATION }}
