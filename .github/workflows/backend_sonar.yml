@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    paths:
-      - api/*
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
@@ -28,6 +26,6 @@ jobs:
     - name: Use .NET Build, Test, SonarCloud check and Publish Action
       uses: ArtyProf/dotnet-build-test-publish-action@v1
       with:
-        sonar-project-key: ${{ secrets.SONAR_PROJECT_KEY }}
-        sonar-token: ${{ secrets.SONAR_TOKEN }}
+        sonar-project-key: ${{ secrets.SONAR_PROJECT_NAME_API }}
+        sonar-token: ${{ secrets.SONAR_TOKEN_API }}
         sonar-organization: ${{ secrets.SONAR_ORGANIZATION }}
