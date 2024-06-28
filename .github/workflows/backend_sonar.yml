@@ -26,7 +26,7 @@ jobs:
     - name: Use .NET Build, Test, SonarCloud and Publish Action
       uses: ArtyProf/dotnet-build-test-publish-action@v1
       with:
-        sonar-project-key: ${{ secrets.SONAR_PROJECT_NAME_API }}
+        sonar-project-key: 'ArtyProf_Arty-App'
         sonar-token: ${{ secrets.SONAR_TOKEN_API }}
         sonar-organization: ${{ secrets.SONAR_ORGANIZATION }}
         dotnet-solution-path: './api/ArtyApp/ArtyApp.sln'
