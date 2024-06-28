@@ -23,7 +23,7 @@ jobs:
     name: Build and analyze
     runs-on: ubuntu-latest
     steps:
-    - name: Use .NET Build, Test, SonarCloud check and Publish Action
+    - name: Use .NET Build, Test, SonarCloud and Publish Action
       uses: ArtyProf/dotnet-build-test-publish-action@v1
       with:
         sonar-project-key: ${{ secrets.SONAR_PROJECT_NAME_API }}
