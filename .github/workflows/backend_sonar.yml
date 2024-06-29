@@ -28,6 +28,6 @@ jobs:
       with:
         sonar-project-key: 'ArtyProf_Arty-App'
         sonar-token: ${{ secrets.SONAR_TOKEN_API }}
-        sonar-organization: 'artyprof'
+        sonar-organization: ''
         dotnet-solution-path: './api/ArtyApp/ArtyApp.sln'
         dotnet-version: '6.0.x'
