@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Use .NET Build, Test, SonarCloud and Publish Action
-      uses: ArtyProf/dotnet-build-test-publish-action@v1.1.0
+      uses: ArtyProf/dotnet-build-test-publish-action@v1.2.0
       with:
         sonar-project-key: 'ArtyProf_Arty-App'
         sonar-token: ${{ secrets.SONAR_TOKEN_API }}
